@@ -9,6 +9,7 @@ module.exports = defineConfig({
     /* HTML Reporter is configured to output into the 'reports' directory.
        'open: "never"' prevents Playwright from trying to open a browser window inside the headless Docker container. */
     reporter: [
+        ['list'],
         ['html', { open: 'never', outputFolder: 'reports' }]
     ],
     use: {
