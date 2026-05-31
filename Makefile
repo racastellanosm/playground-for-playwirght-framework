@@ -21,12 +21,11 @@ build: ## Build the Playwright Docker image
 	@printf "$(GREEN)Build complete!$(RESET)\n"
 
 run-tests: ## Run Playwright tests
-	@mkdir -p "$(shell pwd)/reports" "$(shell pwd)/test-results"
+	@mkdir -p ${PWD}/reports ${PWD}/test-results
 	@printf "$(YELLOW)Running Playwright tests...$(RESET)\n"
 	@docker run --rm \
-		-u "$$(id -u):$$(id -g)" \
-		-v "$(shell pwd)/reports":/app/reports \
-		-v "$(shell pwd)/test-results":/app/test-results \
+		-v ${PWD}/reports:/app/reports \
+		-v ${PWD}/test-results:/app/test-results \
 		playground-for-playwright-framework:latest npx playwright test
 	@printf "$(GREEN)Test complete!$(RESET)\n"
 
