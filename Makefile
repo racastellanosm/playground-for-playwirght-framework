@@ -24,6 +24,7 @@ run-tests: ## Run Playwright tests
 	@mkdir -p ${PWD}/reports
 	@printf "$(YELLOW)Running Playwright tests...$(RESET)\n"
 	@docker run --rm \
+		-u "$(id -u):$(id -g)" \
 		-v ${PWD}/reports:/app/reports \
 		playground-for-playwright-framework:latest npx playwright test
 	@printf "$(GREEN)Test complete!$(RESET)\n"
