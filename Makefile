@@ -21,7 +21,7 @@ build: ## Build the Playwright Docker image
 	@printf "$(GREEN)Build complete!$(RESET)\n"
 
 run-tests: ## Run Playwright tests
-	@mkdir -p reports test-results
+	@mkdir -p "$(shell pwd)/reports" "$(shell pwd)/test-results"
 	@printf "$(YELLOW)Running Playwright tests...$(RESET)\n"
 	@docker run --rm \
 		-u "$$(id -u):$$(id -g)" \
