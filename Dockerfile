@@ -13,9 +13,3 @@ RUN npm ci
 # Copy the rest of the project source files
 COPY ./playwright.config.js ./
 COPY ./tests /app/tests
-
-# Change ownership of the app directory to the non-root user (1000)
-# This is needed for Playwright to be able to write test results
-RUN chown -R 1000:1000 /app
-
-USER 1000
