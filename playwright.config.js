@@ -4,8 +4,8 @@ module.exports = defineConfig({
     testDir: './tests',
     fullyParallel: true,
     forbidOnly: !!process.env.CI,
-    retries: process.env.CI ? 2 : 0,
-    workers: process.env.CI ? 1 : undefined,
+    retries: 1,
+    workers: 2,
     /* HTML Reporter is configured to output into the 'reports' directory.
        'open: "never"' prevents Playwright from trying to open a browser window inside the headless Docker container. */
     reporter: [
@@ -22,6 +22,14 @@ module.exports = defineConfig({
         {
             name: 'chromium',
             use: { ...devices['Desktop Chrome'] },
+        },
+        {
+            name: 'firefox',
+            use: { ...devices['Desktop Firefox'] },
+        },
+        {
+            name: 'webkit',
+            use: { ...devices['Desktop Safari'] },
         }
     ],
 });
