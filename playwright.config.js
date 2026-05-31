@@ -10,7 +10,7 @@ module.exports = defineConfig({
        'open: "never"' prevents Playwright from trying to open a browser window inside the headless Docker container. */
     reporter: [
         ['list'],
-        ['html', { open: 'never', outputFolder: 'reports' }]
+        ['html', { open: 'never', outputFolder: './reports' }]
     ],
     use: {
         trace: 'on-first-retry',
