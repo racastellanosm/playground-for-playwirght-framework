@@ -1,0 +1,19 @@
+{
+    "name": "playground-for-playwright-framework",
+    "version": "1.0.0",
+    "description": "A simple Playwright project template designed to run inside Docker and export HTML reports.",
+    "scripts": {
+        "test": "playwright test"
+    },
+    "keywords": [
+        "playwright",
+        "docker",
+        "testing",
+        "html-report"
+    ],
+    "license": "MIT",
+    "devDependencies": {
+        "@playwright/test": "^1.60.0",
+        "@types/node": "^25.9.1"
+    }
+}
